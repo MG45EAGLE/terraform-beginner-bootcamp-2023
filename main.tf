@@ -11,6 +11,15 @@ terraform {
 }
     }
 
+terraform {
+  cloud {
+    organization = "Terraform-Training-2023"
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
+}
+
 
 provider "aws" {
   # Configuration options

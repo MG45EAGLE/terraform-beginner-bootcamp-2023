@@ -203,3 +203,27 @@ The `terraform.tfstate.backup ` is the previous state file prior to the last cha
 
 ### Terrafrom Directory
 The `.terraform` directory contains binaries of terraform providers.
+
+#### Issues with Terraform Cloud Login and Gitpod Workspace
+
+When attempting to run `terraform login` it will launch bash in a wysiwyg view to generate a token however it does not work as exepected in the Gitpod VSCode browser.
+The workarpound is to manually generate a token in Terraform Cloud 
+
+```
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+```
+Then update the file manually here 
+```sh
+vi home/gitpod/.terraform.d/creedentials.tfrc.json
+
+Provide the folowing code (replace youur token here in the file):
+
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "your token here"
+    }
+  }
+}
+```
