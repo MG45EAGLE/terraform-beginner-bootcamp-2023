@@ -179,14 +179,20 @@ We can output this changeset to be passed to an apply but you can often be ignor
 
 #### Terraform Apply
 `terraform apply`
+e.g. `terraform apply --auto-approve`
+
+#### Terraform Destroy
+`terraform destroy`
+This will destory resources. You may aslo use the approve flag to skip the approval prompt.
+e.g. `terraform destroy --auto-approve`
 
 This will run a plan and patch the changeset to be executed by terraform. Apply should prompt yes or no.
 If we want to automatcally approve an apply we can provide the auto aprove flag eg. `terraform apply --auto-approve`
 
-### Terraform Lock Files 
+#### Terraform Lock Files 
 The terraform lcok file `.terraform.lock.hcl`
 
-### Terraform State Files 
+#### Terraform State Files 
 
 The `.terraform.tfstate` file contains information about your current infrastucture
 The state file eg. `.terraform.tfstate` **should not be modified or commiteed to your version control system.**
